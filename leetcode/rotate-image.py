@@ -4,10 +4,7 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         n=len(matrix)
-        new = [ [0] * n for i in range(n)]
-        for i in range(n):
-            for j in range(n):
-                new[j][n-1-i]=matrix[i][j]
-        for i in range(n):
-            for j in range(n):
-                matrix[i][j]=new[i][j]
+        matrix.reverse()
+        for i in  range(n):
+            for j in range(i,n):
+                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
